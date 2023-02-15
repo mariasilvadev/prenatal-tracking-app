@@ -12,9 +12,10 @@ Technologies used in this app include Swift, SwiftUI, Cloud Firestore for the da
 
 After forking and cloning this repo you should cd to the project directory and open with Xcode. 
 Add the following dependencies for Cloud Firestore and Firebase Authentication using Swift Package Manager:
-https://github.com/firebase/firebase-ios-sdk.git
 
-Add the FirebaseFirestore and FirebaseAuth packages
+```https://github.com/firebase/firebase-ios-sdk.git```
+
+Add the FirebaseFirestore and FirebaseAuth packages.
 
 Create a Cloud Firestore Database following this [documentation](https://firebase.google.com/docs/firestore/quickstart).
 
