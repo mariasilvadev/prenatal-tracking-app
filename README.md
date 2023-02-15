@@ -8,7 +8,7 @@ This app allows a user to create an account and keep track of their prenatal app
 
 Technologies used in this app include Swift, SwiftUI, Cloud Firestore for the database, and Firebase Authentication for user sign in and sign up. 
 
-##How to Install and Run the Project
+## How to Install and Run the Project
 
 After forking and cloning this repo you should cd to the project directory and open with Xcode. 
 Add the following dependencies for Cloud Firestore and Firebase Authentication using Swift Package Manager:
