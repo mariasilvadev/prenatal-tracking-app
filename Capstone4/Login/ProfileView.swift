@@ -72,19 +72,20 @@ struct ProfileView: View {
     
     var body: some View {
         ZStack {
-            Image("background-2")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
+            Color("dull-pink").ignoresSafeArea()
+//            Image("background-2")
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .edgesIgnoringSafeArea(.all)
             VStack {
                 VStack(alignment: .leading, spacing: 16) {
                     HStack(spacing: 16) {
                         ZStack {
                             Circle()
-                                .foregroundColor(Color("pink-gradient-1"))
+                                .foregroundColor(Color("gold"))
                                 .frame(width: 66, height: 66, alignment: .center)
                             Image(systemName: "person.fill")
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("pink"))
                                 .font(.system(size: 24, weight: .medium, design: .rounded))
                         }
                         .frame(width: 66, height: 66, alignment: .center)
@@ -97,7 +98,8 @@ struct ProfileView: View {
                                 showWeeksView.toggle()
                             } label: {
                                 Text("View profile")
-                                    .foregroundColor(.white.opacity(0.7))
+                                    .foregroundColor(Color("gold2"))
+//                                    .foregroundColor(.white.opacity(0.7))
                                     .font(.footnote)
                             }
                         }
@@ -128,13 +130,13 @@ struct ProfileView: View {
                     HStack(spacing: 16) {
                         Image("Twitter")
                             .resizable()
-                            .foregroundColor(.white.opacity(0.7))
+                            .foregroundColor(.white)
                             .frame(width: 24, height: 24, alignment: .center)
                         Image(systemName: "link")
-                            .foregroundColor(.white.opacity(0.7))
+                            .foregroundColor(.white)
                             .font(.system(size: 17, weight: .semibold, design: .rounded))
                         Text("\(mv.currentLogIn?.site ?? "No site added")")
-                            .foregroundColor(.white.opacity(0.7))
+                            .foregroundColor(.white)
                             .font(.footnote)
                         
                     }
@@ -145,8 +147,9 @@ struct ProfileView: View {
             .background(
                 RoundedRectangle(cornerRadius: 30)
                     .stroke(Color.white.opacity(0.2))
-                    .background(Color("secondaryBackground").opacity(0.5))
-                    .shadow(color: Color("shadowColor").opacity(0.5), radius: 60, x: 0, y: 30)
+                    .background(Color(.white).opacity(0.3))
+//                    .background(Color("dull-pink").opacity(0.5))
+//                    .shadow(color: Color("shadowColor").opacity(0.5), radius: 60, x: 0, y: 30)
             )
             .cornerRadius(30)
             .padding(.horizontal)
@@ -156,12 +159,13 @@ struct ProfileView: View {
                     signout()
                 }, label: {
                     Image(systemName: "arrow.turn.up.forward.iphone.fill")
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("gold2"))
                         .font(.system(size: 15, weight: .medium, design: .rounded))
                         .rotation3DEffect(Angle(degrees: 180), axis: (x: 0.0, y: 0.0, z: 1.0))
                         .background(
                             Circle()
-                                .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                                .stroke(Color("gold2"), lineWidth: 1)
+//                                .stroke(Color.white.opacity(0.2), lineWidth: 1)
                                 .frame(width: 42, height: 42, alignment: .center))
                 })
             }

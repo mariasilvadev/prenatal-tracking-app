@@ -23,7 +23,7 @@ struct TextfieldIcon: View {
                         )
                         .blur(radius: 10.0)
                     }
-                    Color("tertiaryBackground")
+                    Color("pink")
                         .cornerRadius(12)
                         .opacity(0.8)
                     .blur(radius: 3.0)
@@ -34,7 +34,7 @@ struct TextfieldIcon: View {
         .overlay(
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color.white, lineWidth: 1)
+                    .stroke(Color("gold2"), lineWidth: 1)
                     .blendMode(.overlay)
                 if passedImage != nil {
 //                    for an image - will work on in future 
@@ -45,7 +45,7 @@ struct TextfieldIcon: View {
 //                        .cornerRadius(8)
                 } else {
                     Image(systemName: iconName)
-                        .gradientForeground(colors: [Color("pink-gradient-1"), Color("pink-gradient-2")])
+                        .gradientForeground(colors: [Color("gold2"), Color("gold2")])
                         .font(.system(size: 17, weight: .medium))
                 }
             }

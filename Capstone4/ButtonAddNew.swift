@@ -12,7 +12,7 @@ struct ButtonAddNew: View {
         ZStack {
             Circle()
                 .frame(width: 50)
-                .foregroundColor(.teal)
+                .foregroundColor(Color("gold"))
             
             Text("+")
                 .font(.title)

@@ -17,18 +17,20 @@ struct WeeksView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottomTrailing) {
+                Color("pink4").ignoresSafeArea(.all)
                 VStack {
                     HStack(alignment: .center) {
                         Text("Your prenatal visits")
-                            .font(.title3).bold()
-                            .padding()
-                        .frame(maxWidth: .infinity)
+                            .font(.title).bold()
+                            .padding(.top, 20)
+                            .foregroundColor(Color("gold2"))
+                            .frame(maxWidth: .infinity)
                         Button {
                             showProfileView.toggle()
                         } label: {
                             ZStack {
                                 Circle()
-                                    .foregroundColor(.teal)
+                                    .foregroundColor(Color("gold"))
                                     .frame(width: 50, height: 50, alignment: .center)
                                 Image(systemName: "person.fill")
                                     .foregroundColor(.white)
@@ -59,28 +61,32 @@ struct WeeksView: View {
                             }
                             
                         }
+                    }
+                    .background(Color("pink4"))
+                    .scrollContentBackground(.hidden)
+                        
                         
                     }
+                    ButtonAddNew()
+                        .padding()
+                        .onTapGesture {
+                            showAddWeekView.toggle()
+                        }
+                }
+                .sheet(isPresented: $showAddWeekView) {
+                    AddWeekView()
                     
                 }
-                ButtonAddNew()
-                    .padding()
-                    .onTapGesture {
-                        showAddWeekView.toggle()
-                    }
-            }
-            .sheet(isPresented: $showAddWeekView) {
-                AddWeekView()
+                .fullScreenCover(isPresented: $showProfileView) {
+                    ProfileView()
+                }
                 
             }
-            .fullScreenCover(isPresented: $showProfileView) {
-                ProfileView()
-            }
-            
         }
-    }
+    
     init() {
         model.getData()
+        
     }
     
 }

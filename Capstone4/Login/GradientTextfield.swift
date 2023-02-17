@@ -29,8 +29,9 @@ struct GradientTextfield: View {
                 .blendMode(.overlay)
         )
         .background(
-            Color(red: 26/255, green: 20/255, blue: 51/255)
+            Color("tan")
                 .cornerRadius(16.0)
+                .opacity(0.2)
         )
     }
 }

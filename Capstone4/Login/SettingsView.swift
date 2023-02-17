@@ -43,7 +43,7 @@ struct SettingsView: View {
         HStack {
             VStack(alignment: .leading, spacing: 16) {
                 Text("Sign up")
-                    .foregroundColor(.white.opacity(0.7))
+                    .foregroundColor(.white)
                     .font(.title)
                 
                 GradientTextfield(editingTextfield: $editingEmailTextfield, textfieldString: $email, textfieldPlaceholder: "Email", textfieldIconString: "envelope.open.fill")
@@ -93,11 +93,11 @@ struct SettingsView: View {
             }
             .padding()
             Spacer()
-                .background(Color("settingsBackground")
+                .background(Color("pink3")
                     .edgesIgnoringSafeArea(.all)
                 )
         }
-        .background(Color("settingsBackground")
+        .background(Color("pink3")
             .edgesIgnoringSafeArea(.all)
         )
         .fullScreenCover(isPresented: $showProfileView) {

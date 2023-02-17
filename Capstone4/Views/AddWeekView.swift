@@ -16,14 +16,17 @@ struct AddWeekView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Create a new visit")
-                .font(.title3).bold()
+                .font(.title2).bold()
                 .frame(maxWidth: .infinity)
+                .foregroundColor(Color("gold2"))
             
             Text("Enter the week of this visit:")
+                .foregroundColor(Color("gold2"))
             TextField("Ex: Week 21", text: $title)
                 .textFieldStyle(.roundedBorder)
             Text("Enter the size or lenght of your baby:")
-            TextField("Ex: This week baby is the size of banana 🍌", text: $title)
+                .foregroundColor(Color("gold2"))
+            TextField("Ex: This week baby is the size of banana 🍌", text: $size)
                 .textFieldStyle(.roundedBorder)
         
             Button {
@@ -33,9 +36,9 @@ struct AddWeekView: View {
                 dismiss()
             } label: {
                 Text("Add visit")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("gold2"))
                     .padding()
-                    .background(.teal)
+                    .background(Color("Color"))
                     .cornerRadius(30)
                     .fontWeight(.bold)
             }
@@ -43,7 +46,7 @@ struct AddWeekView: View {
         }
         .padding(.top, 40)
         .padding(.horizontal)
-        .background(Color(red: 0.569, green: 0.902, blue: 0.928))
+        .background(Color("pink"))
     }
 }
 
