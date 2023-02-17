@@ -51,10 +51,29 @@ struct SettingsView: View {
                     .textContentType(.name)
                     .disableAutocorrection(true)
                 
-                GradientTextfield(editingTextfield: $editingPasswordTextfield, textfieldString: $password, textfieldPlaceholder: "Password", textfieldIconString: "key.fill")
-                    .autocapitalization(.none)
-                    .textContentType(.password)
-                    .disableAutocorrection(true)
+//                GradientTextfield(editingTextfield: $editingPasswordTextfield, textfieldString: $password, textfieldPlaceholder: "Password", textfieldIconString: "key.fill")
+//                    .autocapitalization(.none)
+//                    .textContentType(.password)
+//                    .disableAutocorrection(true)
+                HStack {
+                    TextfieldIcon(iconName: "key.fill", editing: $editingPasswordTextfield, passedImage: .constant(nil))
+                    SecureField("Password", text: $password)
+                        .autocapitalization(.none)
+                        .textContentType(.password)
+                }
+                .frame(height: 52)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.white, lineWidth: 1.0)
+                        .blendMode(.overlay)
+                )
+                .background(
+                    Color("pink5")
+                        .cornerRadius(16.0)
+//                        .opacity(0.1)
+                )
+                .onTapGesture {
+                    editingPasswordTextfield = true}
                 
                 GradientTextfield(editingTextfield: $editingNameTextField, textfieldString: $name, textfieldPlaceholder: "Name", textfieldIconString: "textformat.alt")
                     .autocapitalization(.words)

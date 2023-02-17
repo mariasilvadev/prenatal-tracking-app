@@ -22,8 +22,8 @@ struct WeeksRow: View {
             .frame(maxWidth: .infinity, maxHeight: 20, alignment: .leading)
             .padding(.top)
             .foregroundColor(Color("gold2"))
-            Text(week.size)
-                .frame(width: 280, height: 50)
+                Text(week.size)
+                    .frame(width: 280, height: 50, alignment: .leading)
 
         }
         .frame(maxWidth: .infinity, maxHeight: 150, alignment: .leading)
